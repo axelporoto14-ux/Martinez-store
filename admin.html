@@ -1,37 +1,304 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Panel Admin - Martínez Store</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <title>Panel de administración - Martínez Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Firebase -->
-  <script type="module" src="admin.js"></script>
+    <!-- Opcional: usar tu mismo CSS general -->
+    <link rel="stylesheet" href="styles.css" />
 
+    <style>
+        body {
+            background-color: #000;
+            color: #f5f5f5;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            margin: 0;
+        }
+
+        .admin-wrapper {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 24px;
+            background: #111;
+            border-radius: 16px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.7);
+            border: 1px solid #b38f00;
+        }
+
+        .admin-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .admin-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #f5f5f5;
+        }
+
+        .admin-subtitle {
+            font-size: 14px;
+            color: #c9c9c9;
+        }
+
+        .badge {
+            border: 1px solid #b38f00;
+            border-radius: 999px;
+            padding: 4px 12px;
+            font-size: 12px;
+            color: #b38f00;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: #f5f5f5;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px 10px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            background: #000;
+            color: #f5f5f5;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #b38f00;
+        }
+
+        .btn {
+            border: none;
+            cursor: pointer;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        .btn-primary {
+            background: #b38f00;
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.08);
+        }
+
+        .btn-danger {
+            background: #b00020;
+            color: #fff;
+        }
+
+        .btn-secondary {
+            background: #222;
+            color: #f5f5f5;
+        }
+
+        .section {
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #222;
+        }
+
+        .section:last-of-type {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #f5f5f5;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        @media (max-width: 720px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        th, td {
+            border-bottom: 1px solid #222;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background: #111;
+            color: #f5f5f5;
+        }
+
+        tr:hover {
+            background: #151515;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .pill {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 11px;
+            background: #222;
+            color: #b38f00;
+        }
+
+        /* LOGIN */
+        #login-section {
+            text-align: center;
+        }
+
+        #login-section input {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .logo-mini {
+            display: block;
+            margin: 0 auto 10px;
+            height: 60px;
+            width: auto;
+        }
+
+        a.volver {
+            color: #b38f00;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        a.volver:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <h1>Administrador - Martínez Store</h1>
+    <div class="admin-wrapper">
+        <div class="admin-header">
+            <div>
+                <div class="admin-title">Panel de administración</div>
+                <div class="admin-subtitle">Martínez Store · Gestión de remeras</div>
+            </div>
+            <span class="badge">Versión inicial</span>
+        </div>
 
-  <div id="login-box">
-    <h2>Iniciar Sesión</h2>
-    <input id="email" type="email" placeholder="Correo">
-    <input id="password" type="password" placeholder="Contraseña">
-    <button onclick="login()">Entrar</button>
-  </div>
+        <!-- LINK PARA VOLVER A LA TIENDA -->
+        <p class="text-right" style="margin-top:-8px; margin-bottom:16px;">
+            <a href="index.html" class="volver">← Volver a la tienda</a>
+        </p>
 
-  <div id="panel" style="display:none;">
-    <h2>Agregar Producto</h2>
+        <!-- SECCIÓN LOGIN -->
+        <section id="login-section" class="section">
+            <img src="logo.png" alt="Martínez Store" class="logo-mini" />
+            <p style="margin-bottom: 12px;">Acceso solo para administrador.</p>
+            <form id="login-form">
+                <label for="password">Contraseña de administrador</label>
+                <input type="password" id="password" placeholder="Ingresa la contraseña" required />
+                <button type="submit" class="btn btn-primary">Entrar</button>
+            </form>
+            <p id="login-error" style="color:#ff6b6b; font-size: 13px; margin-top:8px; display:none;">
+                Contraseña incorrecta.
+            </p>
+        </section>
 
-    <input type="text" id="nombre" placeholder="Nombre">
-    <textarea id="descripcion" placeholder="Descripción"></textarea>
-    <input type="number" id="precio" placeholder="Precio">
-    <input type="file" id="imagen">
+        <!-- CONTENIDO ADMIN (OCULTO HASTA LOGIN) -->
+        <section id="admin-section" class="section" style="display:none;">
+            <h2 class="section-title">Nuevo producto / Editar producto</h2>
 
-    <button onclick="subirProducto()">Subir producto</button>
+            <form id="product-form">
+                <input type="hidden" id="product-index" value="-1" />
 
-    <h2>Productos</h2>
-    <div id="lista-admin"></div>
-  </div>
+                <div class="grid-2">
+                    <div>
+                        <label for="nombre">Nombre del producto</label>
+                        <input type="text" id="nombre" required placeholder="Ej: Remera león dorado" />
+                    </div>
+                    <div>
+                        <label for="precio">Precio (Gs)</label>
+                        <input type="number" id="precio" required min="0" step="1000" placeholder="Ej: 120000" />
+                    </div>
+                </div>
 
+                <div class="grid-2" style="margin-top: 10px;">
+                    <div>
+                        <label for="categoria">Categoría</label>
+                        <input type="text" id="categoria" placeholder="Ej: Clásica, Premium, Oferta" />
+                    </div>
+                    <div>
+                        <label for="imagen">URL de la imagen</label>
+                        <input type="text" id="imagen" placeholder="https://... (link de la imagen)" />
+                    </div>
+                </div>
+
+                <div style="margin-top:10px;">
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" placeholder="Ej: Remera negra con estampado dorado, 100% algodón."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="btn-guardar">Guardar producto</button>
+                <button type="button" class="btn btn-secondary" id="btn-cancelar" style="display:none;">Cancelar edición</button>
+            </form>
+        </section>
+
+        <section id="lista-section" class="section" style="display:none;">
+            <h2 class="section-title">Lista de productos</h2>
+            <p style="font-size:13px; color:#c9c9c9; margin-top:-4px; margin-bottom:10px;">
+                Los productos se guardan en tu navegador (localStorage). Luego podemos conectar esto con la tienda pública.
+            </p>
+
+            <div id="sin-productos" class="text-center" style="padding:16px; font-size:14px; color:#c9c9c9;">
+                Todavía no cargaste ningún producto.
+            </div>
+
+            <div id="tabla-contenedor" style="display:none; overflow-x:auto;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Categoría</th>
+                            <th>Precio</th>
+                            <th>Imagen</th>
+                            <th class="text-right">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productos-tbody"></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
+    <script src="admin.js"></script>
 </body>
 </html>
