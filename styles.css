@@ -15,7 +15,7 @@ html, body {
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     background-color: #000;
-    color: #b38f00; /* DORADO PREMIUM */
+    color: #b38f00; /* Dorado premium */
 }
 
 .container {
@@ -33,7 +33,6 @@ header {
     top: 0;
     z-index: 20;
     background-color: #000;
-    border: none; /* Quitamos línea */
 }
 
 .navbar {
@@ -56,9 +55,19 @@ header {
 }
 
 .nav-links a {
-    color: #b38f00; /* Texto dorado */
+    color: #b38f00;
     text-decoration: none;
     font-size: 14px;
+}
+
+/* enlace admin más discreto */
+.admin-link {
+    opacity: 0.5;
+    font-size: 13px;
+}
+
+.admin-link:hover {
+    opacity: 1;
 }
 
 /* ===========================
@@ -68,7 +77,6 @@ header {
 .hero {
     padding: 80px 20px 70px;
     background-color: #000;
-    border: none; /* Quitamos línea */
 }
 
 .hero-inner {
@@ -85,7 +93,7 @@ header {
 
 .hero-title {
     font-size: 32px;
-    color: #b38f00; /* dorado */
+    color: #b38f00;
     margin-bottom: 8px;
 }
 
@@ -101,10 +109,11 @@ header {
     color: #000;
     padding: 12px 26px;
     border-radius: 999px;
+    text-decoration: none;
     font-weight: 600;
     font-size: 15px;
+    border: none;
     cursor: pointer;
-    text-decoration: none;
 }
 
 .btn-hero:hover {
@@ -134,7 +143,7 @@ section {
 }
 
 /* ===========================
-   CATÁLOGO DE PRODUCTOS
+   PRODUCTOS / CATÁLOGO
    =========================== */
 
 .productos-section {
@@ -145,16 +154,17 @@ section {
 /* Grid */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 24px;
 }
 
+/* Tarjeta */
 .product-card {
     background: #050505;
     border-radius: 18px;
-    padding: 16px;
+    padding: 16px 16px 18px;
     border: 1px solid #b38f00;
-    box-shadow: 0 0 20px rgba(179, 143, 0, 0.2);
+    box-shadow: 0 0 20px rgba(179, 143, 0, 0.25);
 }
 
 /* Imagen */
@@ -164,7 +174,7 @@ section {
 }
 
 .product-image {
-    max-width: 110px;
+    max-width: 120px;
     height: auto;
 }
 
@@ -179,6 +189,7 @@ section {
     font-size: 13px;
     color: #b38f00;
     margin-bottom: 8px;
+    min-height: 36px;
 }
 
 .product-price {
@@ -194,6 +205,7 @@ section {
     align-items: center;
     gap: 8px;
     margin-bottom: 8px;
+    flex-wrap: wrap;
 }
 
 .sizes-label {
@@ -203,6 +215,7 @@ section {
 
 .sizes-buttons {
     display: flex;
+    flex-wrap: wrap;
     gap: 6px;
 }
 
@@ -227,9 +240,7 @@ section {
     color: #b38f00;
 }
 
-/* ===========================
-   BOTÓN WHATSAPP
-   =========================== */
+/* Botón WhatsApp en tarjeta */
 
 .btn-wsp {
     width: 100%;
@@ -242,41 +253,59 @@ section {
     border-radius: 999px;
     cursor: pointer;
     color: #000;
+    transition: 0.2s ease;
 }
 
 .btn-wsp:disabled {
     background-color: #333;
     color: #888;
+    cursor: not-allowed;
+}
+
+.btn-wsp:hover:not(:disabled) {
+    filter: brightness(1.1);
 }
 
 /* ===========================
    SOBRE NOSOTROS
    =========================== */
 
+.sobre-section {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
 .sobre-text {
     font-size: 14px;
     color: #b38f00;
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* ===========================
    CONTACTO
    =========================== */
 
-.contact-text,
-.contact-link {
+.contact-section {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-text {
+    font-size: 14px;
     color: #b38f00;
+    margin-bottom: 16px;
 }
 
 .contact-link {
     text-decoration: none;
-    font-weight: bold;
+    color: #b38f00;
+    font-weight: 600;
 }
 
 /* ===========================
-   FOOTER
+   FOOTER (si lo usas)
    =========================== */
 
 footer {
@@ -284,7 +313,6 @@ footer {
     text-align: center;
     font-size: 13px;
     color: #b38f00;
-    border: none;
 }
 
 /* ===========================
@@ -292,11 +320,6 @@ footer {
    =========================== */
 
 @media (max-width: 720px) {
-
-    .hero-title {
-        font-size: 26px;
-    }
-
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -306,5 +329,13 @@ footer {
     .nav-links {
         flex-wrap: wrap;
         gap: 14px;
+    }
+
+    .hero {
+        padding-top: 60px;
+    }
+
+    .hero-title {
+        font-size: 26px;
     }
 }
