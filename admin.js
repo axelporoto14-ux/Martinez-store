@@ -3,9 +3,8 @@
 //  Guarda productos en localStorage
 // ==============================
 
-const ADMIN_PASSWORD = "martinez2024"; // <- puedes cambiarla
+const ADMIN_PASSWORD = "martinez2024"; // cámbiala si querés
 
-// Clave donde se guardan los productos
 const STORAGE_KEY = "productosMartinezStore";
 
 // Elementos del DOM
@@ -23,6 +22,7 @@ const nombreInput = document.getElementById("nombre");
 const precioInput = document.getElementById("precio");
 const categoriaInput = document.getElementById("categoria");
 const imagenInput = document.getElementById("imagen");
+const tallesInput = document.getElementById("talles");
 const descripcionInput = document.getElementById("descripcion");
 
 const btnGuardar = document.getElementById("btn-guardar");
@@ -39,7 +39,6 @@ loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     if (passwordInput.value === ADMIN_PASSWORD) {
-        // Login correcto
         loginError.style.display = "none";
         loginSection.style.display = "none";
         adminSection.style.display = "block";
@@ -51,7 +50,7 @@ loginForm.addEventListener("submit", (e) => {
 });
 
 // ------------------------------
-// UTILIDADES DE LOCALSTORAGE
+// LOCALSTORAGE
 // ------------------------------
 function obtenerProductos() {
     const data = localStorage.getItem(STORAGE_KEY);
@@ -69,7 +68,7 @@ function guardarProductos(productos) {
 }
 
 // ------------------------------
-// RENDERIZAR TABLA
+// TABLA
 // ------------------------------
 function renderTabla(productos) {
     productosTbody.innerHTML = "";
@@ -91,9 +90,7 @@ function renderTabla(productos) {
         tr.appendChild(tdNombre);
 
         const tdCategoria = document.createElement("td");
-        tdCategoria.innerHTML = p.categoria
-            ? `<span class="pill">${p.categoria}</span>`
-            : "-";
+        tdCategoria.textContent = p.categoria || "-";
         tr.appendChild(tdCategoria);
 
         const tdPrecio = document.createElement("td");
@@ -101,6 +98,12 @@ function renderTabla(productos) {
             ? `Gs. ${Number(p.precio).toLocaleString("es-PY")}`
             : "-";
         tr.appendChild(tdPrecio);
+
+        const tdTalles = document.createElement("td");
+        tdTalles.textContent = p.talles && p.talles.length
+            ? p.talles.join(", ")
+            : "-";
+        tr.appendChild(tdTalles);
 
         const tdImagen = document.createElement("td");
         if (p.imagen) {
@@ -126,7 +129,6 @@ function renderTabla(productos) {
 
         tdAcciones.appendChild(btnEditar);
         tdAcciones.appendChild(btnEliminar);
-
         tr.appendChild(tdAcciones);
 
         productosTbody.appendChild(tr);
@@ -139,7 +141,7 @@ function cargarProductos() {
 }
 
 // ------------------------------
-// CREAR / EDITAR PRODUCTO
+// CREAR / EDITAR
 // ------------------------------
 productForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -152,15 +154,17 @@ productForm.addEventListener("submit", (e) => {
         categoria: categoriaInput.value.trim(),
         imagen: imagenInput.value.trim(),
         descripcion: descripcionInput.value.trim(),
+        talles: tallesInput.value
+            .split(",")
+            .map(t => t.trim().toUpperCase())
+            .filter(t => t !== "")
     };
 
     const index = Number(productIndexInput.value);
 
     if (index === -1) {
-        // Crear
         productos.push(nuevoProducto);
     } else {
-        // Editar
         productos[index] = nuevoProducto;
     }
 
@@ -179,6 +183,7 @@ function limpiarFormulario() {
     precioInput.value = "";
     categoriaInput.value = "";
     imagenInput.value = "";
+    tallesInput.value = "";
     descripcionInput.value = "";
     btnGuardar.textContent = "Guardar producto";
     btnCancelar.style.display = "none";
@@ -197,6 +202,7 @@ function editarProducto(index) {
     precioInput.value = p.precio || "";
     categoriaInput.value = p.categoria || "";
     imagenInput.value = p.imagen || "";
+    tallesInput.value = p.talles ? p.talles.join(",") : "";
     descripcionInput.value = p.descripcion || "";
 
     btnGuardar.textContent = "Actualizar producto";
@@ -217,6 +223,3 @@ function eliminarProducto(index) {
     guardarProductos(productos);
     renderTabla(productos);
 }
-
-// Hacer visibles secciones si ya estaba logueado en esta sesión (opcional)
-// Podríamos agregar lógica de "recordar login" si hace falta más adelante.
