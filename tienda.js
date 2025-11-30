@@ -1,5 +1,8 @@
 // Catálogo público - Martínez Store
 
+// ⚠️ Cambia este número al tuyo con código de país
+const NUMERO_WHATSAPP = "595XXXXXXXXX";
+
 const productos = [
   {
     id: 1,
@@ -7,7 +10,7 @@ const productos = [
     precio: 120000,
     descripcion: "Remera negra con logo de león dorado. 100% algodón.",
     talles: ["S", "M", "L", "XL"],
-    imagen: "logo.png" // luego podemos cambiar a foto real
+    imagen: "logo.png"
   },
   {
     id: 2,
@@ -27,7 +30,6 @@ const productos = [
   }
 ];
 
-// Render de productos en la página
 const contenedor = document.getElementById("product-list");
 
 function crearTarjetaProducto(producto) {
@@ -41,15 +43,23 @@ function crearTarjetaProducto(producto) {
     <h3 class="product-name">${producto.nombre}</h3>
     <p class="product-desc">${producto.descripcion}</p>
     <p class="product-price">Gs. ${producto.precio.toLocaleString("es-PY")}</p>
+
     <div class="product-sizes">
       <span class="sizes-label">Talles:</span>
       <div class="sizes-buttons"></div>
     </div>
+
     <p class="selected-size-text">Selecciona un talle</p>
+
+    <button class="btn-wsp" disabled>Pedir por WhatsApp</button>
   `;
 
+  // BOTONES DE TALLE
   const contenedorTalles = card.querySelector(".sizes-buttons");
   const textoSeleccion = card.querySelector(".selected-size-text");
+  const btnWsp = card.querySelector(".btn-wsp");
+
+  let talleSeleccionado = null;
 
   producto.talles.forEach((talle) => {
     const btn = document.createElement("button");
@@ -57,16 +67,33 @@ function crearTarjetaProducto(producto) {
     btn.className = "size-btn";
 
     btn.addEventListener("click", () => {
-      // Quitar selección previa
       contenedorTalles.querySelectorAll(".size-btn").forEach((b) => {
         b.classList.remove("selected");
       });
-      // Marcar seleccionado
       btn.classList.add("selected");
+
+      talleSeleccionado = talle;
       textoSeleccion.textContent = `Talle seleccionado: ${talle}`;
+      btnWsp.disabled = false;
     });
 
     contenedorTalles.appendChild(btn);
+  });
+
+  // BOTÓN WHATSAPP
+  btnWsp.addEventListener("click", () => {
+    if (!talleSeleccionado) return;
+
+    const mensaje = `
+Hola! Me interesa la *${producto.nombre}*.
+Talle: *${talleSeleccionado}*
+Precio: Gs. ${producto.precio.toLocaleString("es-PY")}
+
+¿Está disponible?
+    `;
+
+    const url = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
+    window.open(url, "_blank");
   });
 
   return card;
