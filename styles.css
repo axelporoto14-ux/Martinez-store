@@ -1,150 +1,97 @@
-/* ==== ESTILO PREMIUM NEGRO + DORADO ==== */
-* {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #000;
+  background: #000;
   color: #d4af37;
-}
-
-/* ==== HEADER CENTRADO ==== */
-.header {
-  background-color: #000;
-  padding: 50px 0 30px 0;
-  border-bottom: 1px solid #d4af37;
   text-align: center;
 }
 
-.header-center {
+/* Header */
+header {
   display: flex;
-  flex-direction: column; /* Logo arriba, menú abajo */
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
+  padding: 20px;
+  border-bottom: 2px solid #d4af37;
 }
 
-.logo {
-  width: 300px; /* Ajustá el tamaño del logo a gusto */
-  max-width: 90%;
-  margin-bottom: 20px;
+header img {
+  height: 90px;
 }
 
-.nav-center {
-  margin-top: 10px;
-}
-
-.nav-center a {
+nav a {
+  margin: 0 15px;
+  font-size: 18px;
   color: #d4af37;
-  margin: 0 20px;
-  font-size: 1.3rem;
   text-decoration: none;
-  font-weight: bold;
 }
 
-.nav-center a:hover {
-  color: #fff;
+nav a:hover {
+  text-decoration: underline;
+  color: white;
 }
 
-/* ==== HERO ==== */
+/* Hero */
 .hero {
-  text-align: center;
   padding: 60px 20px;
 }
 
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
+.hero-logo {
+  width: 160px;
 }
 
-.btn-principal {
-  display: inline-block;
-  padding: 12px 25px;
-  background-color: #d4af37;
-  color: #000;
-  border-radius: 4px;
+.btn {
+  background: #d4af37;
+  color: black;
+  padding: 10px 25px;
+  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
-  transition: 0.3s;
 }
 
-.btn-principal:hover {
-  background-color: #b8952d;
+/* Productos */
+#productos {
+  margin-top: 60px;
 }
 
-/* ==== PRODUCTOS ==== */
-.productos {
-  padding: 40px 20px;
-  max-width: 1100px;
-  margin: 0 auto;
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 20px;
 }
 
-.grid-productos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.producto {
-  background-color: #111;
-  border: 1px solid #d4af37;
+.card {
+  background: #111;
+  border: 2px solid #d4af37;
+  width: 260px;
   padding: 15px;
-  border-radius: 6px;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(212,175,55,0.3);
+  border-radius: 10px;
 }
 
-.producto img {
-  max-width: 100%;
-  border-radius: 6px;
+.card img {
+  width: 100%;
+  border-radius: 8px;
 }
 
 .precio {
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin: 10px 0;
 }
 
-.btn-whatsapp {
-  display: inline-block;
-  padding: 10px 15px;
-  background-color: #25d366;
-  border-radius: 4px;
+.btn-wsp {
+  background: #d4af37;
+  color: black;
+  padding: 8px 12px;
   text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  transition: 0.3s;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px;
 }
 
-.btn-whatsapp:hover {
-  background-color: #1eb257;
-}
-
-/* ==== SECCIONES ==== */
-.sobre-nosotros,
-.contacto {
+/* Secciones */
+section {
   padding: 40px 20px;
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* ==== FOOTER ==== */
-.footer {
-  background-color: #000;
-  text-align: center;
-  padding: 15px;
-  border-top: 1px solid #d4af37;
-}
-
-/* ==== RESPONSIVO ==== */
-@media (max-width: 600px) {
-  .logo {
-    width: 220px;
-  }
-
-  .nav-center a {
-    margin: 10px;
-    font-size: 1.1rem;
-  }
 }
