@@ -1,4 +1,4 @@
-/* Fuente y estilos generales */
+/* ==== ESTILO PREMIUM NEGRO + DORADO ==== */
 * {
   box-sizing: border-box;
 }
@@ -6,41 +6,51 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #000;
+  color: #d4af37;
 }
 
-/* Header */
+/* ==== HEADER CENTRADO ==== */
 .header {
-  background-color: #111;
-  color: #fff;
-  padding: 15px 30px;
+  background-color: #000;
+  padding: 50px 0 30px 0;
+  border-bottom: 1px solid #d4af37;
+  text-align: center;
+}
+
+.header-center {
   display: flex;
+  flex-direction: column; /* Logo arriba, menú abajo */
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
-.header h1 {
-  margin: 0;
+.logo {
+  width: 300px; /* Ajustá el tamaño del logo a gusto */
+  max-width: 90%;
+  margin-bottom: 20px;
 }
 
-.header nav a {
-  color: #fff;
-  margin-left: 15px;
+.nav-center {
+  margin-top: 10px;
+}
+
+.nav-center a {
+  color: #d4af37;
+  margin: 0 20px;
+  font-size: 1.3rem;
   text-decoration: none;
   font-weight: bold;
 }
 
-.header nav a:hover {
-  text-decoration: underline;
+.nav-center a:hover {
+  color: #fff;
 }
 
-/* Hero */
+/* ==== HERO ==== */
 .hero {
   text-align: center;
   padding: 60px 20px;
-  background-color: #222;
-  color: #fff;
 }
 
 .hero h2 {
@@ -48,34 +58,26 @@ body {
   margin-bottom: 10px;
 }
 
-.hero p {
-  margin-bottom: 20px;
-}
-
 .btn-principal {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #ffcc00;
-  color: #111;
+  padding: 12px 25px;
+  background-color: #d4af37;
+  color: #000;
+  border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
-  border-radius: 4px;
+  transition: 0.3s;
 }
 
 .btn-principal:hover {
-  opacity: 0.9;
+  background-color: #b8952d;
 }
 
-/* Productos */
+/* ==== PRODUCTOS ==== */
 .productos {
   padding: 40px 20px;
   max-width: 1100px;
   margin: 0 auto;
-}
-
-.productos h2 {
-  text-align: center;
-  margin-bottom: 30px;
 }
 
 .grid-productos {
@@ -85,11 +87,12 @@ body {
 }
 
 .producto {
-  background-color: #fff;
-  border-radius: 6px;
+  background-color: #111;
+  border: 1px solid #d4af37;
   padding: 15px;
+  border-radius: 6px;
   text-align: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(212,175,55,0.3);
 }
 
 .producto img {
@@ -97,64 +100,51 @@ body {
   border-radius: 6px;
 }
 
-.producto h3 {
-  margin: 10px 0 5px;
-}
-
-.producto p {
-  margin: 0 0 10px;
-}
-
 .precio {
-  display: block;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-.producto button {
-  padding: 8px 15px;
-  border: none;
-  background-color: #111;
-  color: #fff;
-  cursor: pointer;
+.btn-whatsapp {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #25d366;
   border-radius: 4px;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-.producto button:hover {
-  opacity: 0.9;
+.btn-whatsapp:hover {
+  background-color: #1eb257;
 }
 
-/* Secciones de texto */
+/* ==== SECCIONES ==== */
 .sobre-nosotros,
 .contacto {
   padding: 40px 20px;
+  text-align: center;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.sobre-nosotros h2,
-.contacto h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Footer */
+/* ==== FOOTER ==== */
 .footer {
+  background-color: #000;
   text-align: center;
   padding: 15px;
-  background-color: #111;
-  color: #fff;
-  margin-top: 30px;
+  border-top: 1px solid #d4af37;
 }
 
-/* Responsivo básico */
+/* ==== RESPONSIVO ==== */
 @media (max-width: 600px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
+  .logo {
+    width: 220px;
   }
 
-  .header nav {
-    margin-top: 10px;
+  .nav-center a {
+    margin: 10px;
+    font-size: 1.1rem;
   }
 }
