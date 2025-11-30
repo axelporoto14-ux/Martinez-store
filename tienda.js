@@ -1,21 +1,22 @@
 // ==============================
 // CATÁLOGO FIJO (SE VE IGUAL EN CELU Y PC)
+// Y ENVÍA LINK DE LA FOTO POR WHATSAPP
 // ==============================
 
 const NUMERO_WHATSAPP = "595982352177";
+const BASE_URL_IMAGENES = "https://axelporoto14-ux.github.io/Martinez-store/";
 
-// 👉 Acá definís tus remeras (agregá más objetos al array)
+// 👉 Acá definís tus remeras
 const PRODUCTOS = [
   {
     nombre: "Remera 100% algodón",
     precio: 85000,
     categoria: "P",
     descripcion: "Remera negra 100% algodón premium.",
-    talles: ["P"],
-    imagen: "remera1.png" // nombre de la foto en tu repositorio
+    talles: ["P", "M", "G", "XL"],
+    imagen: "remera1.png" // el archivo que subas a GitHub
   }
-  // { ...otro producto... },
-  // { ...otro producto... }
+  // agregá más productos aquí...
 ];
 
 // crea una tarjeta en la web
@@ -75,13 +76,16 @@ function crearTarjetaProducto(producto) {
   btnWsp.addEventListener("click", () => {
     if (!talleSeleccionado) return;
 
+    const urlImagen = producto.imagen
+      ? BASE_URL_IMAGENES + producto.imagen
+      : "Sin imagen";
+
     const mensaje = `
 Hola! Me interesa la *${producto.nombre}*.
 Talle: *${talleSeleccionado}*
 Precio: Gs. ${Number(producto.precio || 0).toLocaleString("es-PY")}
-
-¿Está disponible?
-        `;
+Foto: ${urlImagen}
+    `;
 
     const url = `https://wa.me/${NUMERO_WHATSAPP}?text=${encodeURIComponent(
       mensaje
