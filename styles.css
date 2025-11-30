@@ -1,5 +1,5 @@
 /* ===========================
-   ESTILOS GENERALES PREMIUM
+   GENERALES
    =========================== */
 
 * {
@@ -15,18 +15,8 @@ html, body {
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     background-color: #000;
-    color: #b38f00; /* Dorado premium */
+    color: #b38f00;
 }
-
-.container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ===========================
-   HEADER
-   =========================== */
 
 header {
     position: sticky;
@@ -34,6 +24,10 @@ header {
     z-index: 20;
     background-color: #000;
 }
+
+/* ===========================
+   NAVBAR
+   =========================== */
 
 .navbar {
     display: flex;
@@ -60,7 +54,6 @@ header {
     font-size: 14px;
 }
 
-/* enlace admin más discreto */
 .admin-link {
     opacity: 0.5;
     font-size: 13px;
@@ -143,7 +136,36 @@ section {
 }
 
 /* ===========================
-   PRODUCTOS / CATÁLOGO
+   TABS POR TALLE
+   =========================== */
+
+.size-tabs {
+    max-width: 1100px;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.size-tab {
+    border-radius: 999px;
+    border: 1px solid #b38f00;
+    background: transparent;
+    color: #b38f00;
+    padding: 8px 16px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.size-tab.active,
+.size-tab:hover {
+    background: #b38f00;
+    color: #000;
+}
+
+/* ===========================
+   PRODUCTOS
    =========================== */
 
 .productos-section {
@@ -151,7 +173,6 @@ section {
     margin: 0 auto;
 }
 
-/* Grid */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -174,7 +195,7 @@ section {
 }
 
 .product-image {
-    max-width: 120px;
+    max-width: 160px;
     height: auto;
 }
 
@@ -196,51 +217,16 @@ section {
     font-size: 16px;
     color: #b38f00;
     font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.product-size-label {
+    font-size: 13px;
+    color: #b38f00;
     margin-bottom: 10px;
 }
 
-/* Talles */
-.product-sizes {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-    flex-wrap: wrap;
-}
-
-.sizes-label {
-    font-size: 13px;
-    color: #b38f00;
-}
-
-.sizes-buttons {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.size-btn {
-    border-radius: 999px;
-    border: 1px solid #b38f00;
-    background: transparent;
-    color: #b38f00;
-    padding: 4px 10px;
-    font-size: 12px;
-    cursor: pointer;
-}
-
-.size-btn:hover,
-.size-btn.selected {
-    background: #b38f00;
-    color: #000;
-}
-
-.selected-size-text {
-    font-size: 12px;
-    color: #b38f00;
-}
-
-/* Botón WhatsApp en tarjeta */
+/* Botón WhatsApp */
 
 .btn-wsp {
     width: 100%;
@@ -256,18 +242,12 @@ section {
     transition: 0.2s ease;
 }
 
-.btn-wsp:disabled {
-    background-color: #333;
-    color: #888;
-    cursor: not-allowed;
-}
-
-.btn-wsp:hover:not(:disabled) {
+.btn-wsp:hover {
     filter: brightness(1.1);
 }
 
 /* ===========================
-   SOBRE NOSOTROS
+   SOBRE / CONTACTO
    =========================== */
 
 .sobre-section {
@@ -281,10 +261,6 @@ section {
     color: #b38f00;
     line-height: 1.6;
 }
-
-/* ===========================
-   CONTACTO
-   =========================== */
 
 .contact-section {
     max-width: 800px;
@@ -302,17 +278,6 @@ section {
     text-decoration: none;
     color: #b38f00;
     font-weight: 600;
-}
-
-/* ===========================
-   FOOTER (si lo usas)
-   =========================== */
-
-footer {
-    padding: 16px 20px;
-    text-align: center;
-    font-size: 13px;
-    color: #b38f00;
 }
 
 /* ===========================
