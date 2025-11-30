@@ -1,40 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
-
-Edit
-
-Preview
-
 <head>
   <meta charset="UTF-8">
-  <title>Martínez Store - Ropa para caballero</title>
+  <title>Martínez Store - Ropa para caballeros</title>
   <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
+  <!-- HEADER CENTRADO -->
   <header class="header">
-    <h1>Martínez Store</h1>
-    <nav>
-      <a href="#productos">Productos</a>
-      <a href="#sobre-nosotros">Sobre nosotros</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+    <div class="header-center">
+      <img src="logo.png" alt="Martínez Store" class="logo">
+
+      <nav class="nav-center">
+        <a href="#productos">Productos</a>
+        <a href="#sobre-nosotros">Sobre nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
   </header>
 
+  <!-- HERO -->
   <section class="hero">
     <h2>Remeras con estilo para caballeros</h2>
     <p>Diseños únicos, buena calidad y los mejores precios.</p>
     <a href="#productos" class="btn-principal">Ver catálogo</a>
   </section>
 
+  <!-- PRODUCTOS -->
   <section id="productos" class="productos">
     <h2>Nuestras remeras</h2>
+
     <div class="grid-productos">
+
       <article class="producto">
         <img src="https://via.placeholder.com/300x300" alt="Remera diseño 1">
         <h3>Remera diseño 1</h3>
         <p>Algodón 100% - Talles S al XXL</p>
         <span class="precio">Gs. 80.000</span>
-        <button>Consultar por WhatsApp</button>
+        <a class="btn-whatsapp" href="https://wa.me/595982352177?text=Hola%20Martínez%20Store,%20quiero%20info%20sobre%20Remera%201" target="_blank">
+          Consultar por WhatsApp
+        </a>
       </article>
 
       <article class="producto">
@@ -42,7 +49,9 @@ Preview
         <h3>Remera diseño 2</h3>
         <p>Algodón 100% - Talles S al XXL</p>
         <span class="precio">Gs. 85.000</span>
-        <button>Consultar por WhatsApp</button>
+        <a class="btn-whatsapp" href="https://wa.me/595982352177?text=Hola%20Martínez%20Store,%20quiero%20info%20sobre%20Remera%202" target="_blank">
+          Consultar por WhatsApp
+        </a>
       </article>
 
       <article class="producto">
@@ -50,29 +59,45 @@ Preview
         <h3>Remera diseño 3</h3>
         <p>Algodón 100% - Talles S al XXL</p>
         <span class="precio">Gs. 90.000</span>
-        <button>Consultar por WhatsApp</button>
+        <a class="btn-whatsapp" href="https://wa.me/595982352177?text=Hola%20Martínez%20Store,%20quiero%20info%20sobre%20Remera%203" target="_blank">
+          Consultar por WhatsApp
+        </a>
       </article>
+
     </div>
   </section>
 
+  <!-- SOBRE NOSOTROS -->
   <section id="sobre-nosotros" class="sobre-nosotros">
     <h2>Sobre Martínez Store</h2>
     <p>
-      Somos una tienda de ropa para caballero enfocada en remeras con diseños únicos.
-      Trabajamos con materiales de calidad y atención personalizada.
+      Somos una tienda de ropa para caballeros especializada en remeras con diseños únicos.
+      Trabajamos con alta calidad y atención personalizada.
     </p>
   </section>
 
+  <!-- CONTACTO -->
   <section id="contacto" class="contacto">
     <h2>Contacto</h2>
-    <p>Hacemos envíos en todo Paraguay.</p>
-    <p><strong>WhatsApp:</strong> +595 9XX XXX XXX</p>
+    <p>Hacemos envíos a todo Paraguay.</p>
+
+    <p><strong>WhatsApp:</strong> 
+      <a href="https://wa.me/595982352177?text=Hola%20Martínez%20Store,%20quiero%20más%20información" target="_blank">
+        +595 982 352177
+      </a>
+    </p>
+
     <p><strong>Instagram:</strong> @martinezstore</p>
+
+    <a class="btn-principal btn-contacto" href="https://wa.me/595982352177?text=Hola%20Martínez%20Store,%20vengo%20de%20la%20web" target="_blank">
+      Escribinos por WhatsApp
+    </a>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
-    <p>© 2025 Martínez Store - Todos los derechos reservados</p>
+    <p>© 2025 Martínez Store — Todos los derechos reservados.</p>
   </footer>
+
 </body>
 </html>
-
