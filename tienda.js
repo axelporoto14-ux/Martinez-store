@@ -12,6 +12,7 @@ function obtenerProductos() {
     try {
         return JSON.parse(data) || [];
     } catch {
+        console.error("Error al parsear productos:", err);
         return [];
     }
 }
