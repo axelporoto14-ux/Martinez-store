@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel Admin - Martínez Store</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Firebase -->
+  <script type="module" src="admin.js"></script>
+
+</head>
+<body>
+  <h1>Administrador - Martínez Store</h1>
+
+  <div id="login-box">
+    <h2>Iniciar Sesión</h2>
+    <input id="email" type="email" placeholder="Correo">
+    <input id="password" type="password" placeholder="Contraseña">
+    <button onclick="login()">Entrar</button>
+  </div>
+
+  <div id="panel" style="display:none;">
+    <h2>Agregar Producto</h2>
+
+    <input type="text" id="nombre" placeholder="Nombre">
+    <textarea id="descripcion" placeholder="Descripción"></textarea>
+    <input type="number" id="precio" placeholder="Precio">
+    <input type="file" id="imagen">
+
+    <button onclick="subirProducto()">Subir producto</button>
+
+    <h2>Productos</h2>
+    <div id="lista-admin"></div>
+  </div>
+
+</body>
+</html>
