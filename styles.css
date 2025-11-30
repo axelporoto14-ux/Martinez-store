@@ -1,5 +1,5 @@
 /* ===========================
-   ESTILOS GENERALES
+   ESTILOS GENERALES PREMIUM
    =========================== */
 
 * {
@@ -15,7 +15,7 @@ html, body {
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     background-color: #000;
-    color: #f5f5f5;
+    color: #b38f00; /* DORADO PREMIUM */
 }
 
 .container {
@@ -33,7 +33,7 @@ header {
     top: 0;
     z-index: 20;
     background-color: #000;
-    border-bottom: 1px solid #b38f00;
+    border: none; /* Quitamos línea */
 }
 
 .navbar {
@@ -45,22 +45,9 @@ header {
     margin: 0 auto;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
 .logo img {
     height: 40px;
     width: auto;
-}
-
-.logo-text {
-    font-size: 16px;
-    color: #f5f5f5;
-    font-weight: 600;
-    letter-spacing: 1px;
 }
 
 .nav-links {
@@ -69,25 +56,9 @@ header {
 }
 
 .nav-links a {
-    color: #f5f5f5;
+    color: #b38f00; /* Texto dorado */
     text-decoration: none;
     font-size: 14px;
-    position: relative;
-}
-
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0;
-    height: 2px;
-    background-color: #b38f00;
-    transition: width 0.2s ease;
-}
-
-.nav-links a:hover::after {
-    width: 100%;
 }
 
 /* ===========================
@@ -97,7 +68,7 @@ header {
 .hero {
     padding: 80px 20px 70px;
     background-color: #000;
-    border-bottom: 1px solid #b38f00;
+    border: none; /* Quitamos línea */
 }
 
 .hero-inner {
@@ -114,13 +85,13 @@ header {
 
 .hero-title {
     font-size: 32px;
-    color: #f5f5f5;
+    color: #b38f00; /* dorado */
     margin-bottom: 8px;
 }
 
 .hero-subtitle {
     font-size: 15px;
-    color: #c9c9c9;
+    color: #b38f00;
     margin-bottom: 22px;
 }
 
@@ -130,11 +101,10 @@ header {
     color: #000;
     padding: 12px 26px;
     border-radius: 999px;
-    text-decoration: none;
     font-weight: 600;
     font-size: 15px;
-    border: none;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .btn-hero:hover {
@@ -142,7 +112,7 @@ header {
 }
 
 /* ===========================
-   SECCIONES GENERALES
+   SECCIONES
    =========================== */
 
 section {
@@ -152,19 +122,19 @@ section {
 .section-title-center {
     text-align: center;
     font-size: 26px;
-    color: #f5f5f5;
+    color: #b38f00;
     margin-bottom: 8px;
 }
 
 .section-subtitle-center {
     text-align: center;
     font-size: 14px;
-    color: #c9c9c9;
+    color: #b38f00;
     margin-bottom: 24px;
 }
 
 /* ===========================
-   PRODUCTOS / CATÁLOGO
+   CATÁLOGO DE PRODUCTOS
    =========================== */
 
 .productos-section {
@@ -179,13 +149,12 @@ section {
     gap: 24px;
 }
 
-/* Tarjeta */
 .product-card {
     background: #050505;
     border-radius: 18px;
-    padding: 16px 16px 18px;
-    border: 1px solid #333;
-    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    padding: 16px;
+    border: 1px solid #b38f00;
+    box-shadow: 0 0 20px rgba(179, 143, 0, 0.2);
 }
 
 /* Imagen */
@@ -199,18 +168,17 @@ section {
     height: auto;
 }
 
-/* Texto */
+/* Textos */
 .product-name {
     font-size: 18px;
-    color: #f5f5f5;
+    color: #b38f00;
     margin-bottom: 4px;
 }
 
 .product-desc {
     font-size: 13px;
-    color: #c9c9c9;
+    color: #b38f00;
     margin-bottom: 8px;
-    min-height: 36px;
 }
 
 .product-price {
@@ -226,17 +194,15 @@ section {
     align-items: center;
     gap: 8px;
     margin-bottom: 8px;
-    flex-wrap: wrap;
 }
 
 .sizes-label {
     font-size: 13px;
-    color: #f5f5f5;
+    color: #b38f00;
 }
 
 .sizes-buttons {
     display: flex;
-    flex-wrap: wrap;
     gap: 6px;
 }
 
@@ -250,11 +216,7 @@ section {
     cursor: pointer;
 }
 
-.size-btn:hover {
-    background: #b38f00;
-    color: #000;
-}
-
+.size-btn:hover,
 .size-btn.selected {
     background: #b38f00;
     color: #000;
@@ -262,7 +224,7 @@ section {
 
 .selected-size-text {
     font-size: 12px;
-    color: #c9c9c9;
+    color: #b38f00;
 }
 
 /* ===========================
@@ -280,70 +242,37 @@ section {
     border-radius: 999px;
     cursor: pointer;
     color: #000;
-    transition: 0.2s ease;
 }
 
 .btn-wsp:disabled {
-    background-color: #3a3a3a;
-    cursor: not-allowed;
-    color: #999;
-}
-
-.btn-wsp:hover:not(:disabled) {
-    filter: brightness(1.1);
+    background-color: #333;
+    color: #888;
 }
 
 /* ===========================
    SOBRE NOSOTROS
    =========================== */
 
-.sobre-section {
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
-}
-
 .sobre-text {
     font-size: 14px;
-    color: #c9c9c9;
-    line-height: 1.6;
+    color: #b38f00;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 /* ===========================
    CONTACTO
    =========================== */
 
-.contact-section {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.contact-text {
-    font-size: 14px;
-    color: #c9c9c9;
-    margin-bottom: 16px;
-}
-
-.contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    flex-wrap: wrap;
+.contact-text,
+.contact-link {
+    color: #b38f00;
 }
 
 .contact-link {
     text-decoration: none;
-    color: #000;
-    background-color: #b38f00;
-    padding: 8px 18px;
-    border-radius: 999px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.contact-link:hover {
-    filter: brightness(1.08);
+    font-weight: bold;
 }
 
 /* ===========================
@@ -351,11 +280,11 @@ section {
    =========================== */
 
 footer {
-    border-top: 1px solid #b38f00;
     padding: 16px 20px;
     text-align: center;
     font-size: 13px;
-    color: #c9c9c9;
+    color: #b38f00;
+    border: none;
 }
 
 /* ===========================
@@ -363,6 +292,11 @@ footer {
    =========================== */
 
 @media (max-width: 720px) {
+
+    .hero-title {
+        font-size: 26px;
+    }
+
     .navbar {
         flex-direction: column;
         align-items: flex-start;
@@ -370,18 +304,7 @@ footer {
     }
 
     .nav-links {
-        width: 100%;
-        justify-content: flex-start;
         flex-wrap: wrap;
         gap: 14px;
     }
-
-    .hero {
-        padding-top: 60px;
-    }
-
-    .hero-title {
-        font-size: 26px;
-    }
 }
-
