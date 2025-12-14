@@ -1,69 +1,85 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Martinez Store</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>Martinez Store</title>
 
-<style>
-body{
-    margin:0;
-    background:#000;
-    color:#fff;
-    font-family:Arial, sans-serif;
-    text-align:center;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-header{
-    width:100%;
-    height:480px;
-    border-bottom:2px solid #f1c40f;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
-    padding-top:80px; /* 👈 baja el logo */
-    box-sizing:border-box;
-}
+    body {
+      background: #000;
+      color: #fff;
+      text-align: center;
+    }
 
-header img{
-    height:280px;
-    margin-bottom:20px;
-}
+    header {
+      padding-top: 60px;
+      padding-bottom: 40px;
+      border-bottom: 2px solid gold;
+    }
 
-h1{
-    color:#f1c40f;
-    margin:0 0 10px;
-}
+    .logo {
+      width: 280px;
+      max-width: 90%;
+      display: block;
+      margin: 0 auto 30px auto;
+    }
 
-p{
-    color:#ccc;
-    margin-bottom:20px;
-}
+    h1 {
+      color: gold;
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
 
-a{
-    background:#25d366;
-    color:#000;
-    padding:14px 30px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-}
-</style>
+    p {
+      color: #ccc;
+      margin-bottom: 25px;
+    }
+
+    .btn-whatsapp {
+      display: inline-block;
+      background: #25d366;
+      color: #000;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .btn-whatsapp:hover {
+      opacity: 0.9;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<img src="https://res.cloudinary.com/dzqbrgo8i/image/upload/v1765750591/0ca065a0-0e7a-456e-9a4c-7db50dfe9d52_0uop7pd.jpg">
+  <header>
+    <!-- LOGO -->
+    <img
+      class="logo"
+      src="https://res.cloudinary.com/dzqbrgo8i/image/upload/logo-martinez-store.jpg"
+      alt="Martinez Store Logo"
+    >
 
-<h1>Martinez Store</h1>
-<p>Ropa para caballero · Estilo premium</p>
+    <h1>Martinez Store</h1>
+    <p>Ropa para caballero · Estilo premium</p>
 
-<a href="https://wa.me/595982352177" target="_blank">
-Comprar por WhatsApp
-</a>
-</header>
+    <a
+      class="btn-whatsapp"
+      href="https://wa.me/595982352177"
+      target="_blank"
+    >
+      Comprar por WhatsApp
+    </a>
+  </header>
 
 </body>
 </html>
