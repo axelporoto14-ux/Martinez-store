@@ -1,327 +1,112 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <title>Panel de administración - Martínez Store</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="styles.css" />
-
-    <style>
-        body {
-            background-color: #000;
-            color: #f5f5f5;
-        }
-
-        .admin-wrapper {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 24px;
-            background: #111;
-            border-radius: 16px;
-            box-shadow: 0 0 25px rgba(0,0,0,0.7);
-            border: 1px solid #b38f00;
-        }
-
-        .admin-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        .admin-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #f5f5f5;
-        }
-
-        .admin-subtitle {
-            font-size: 14px;
-            color: #c9c9c9;
-        }
-
-        .badge {
-            border: 1px solid #b38f00;
-            border-radius: 999px;
-            padding: 4px 12px;
-            font-size: 12px;
-            color: #b38f00;
-        }
-
-        label {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 4px;
-            color: #f5f5f5;
-        }
-
-        input[type="text"],
-        input[type="number"],
-        textarea {
-            width: 100%;
-            padding: 8px 10px;
-            border-radius: 8px;
-            border: 1px solid #333;
-            background: #000;
-            color: #f5f5f5;
-            font-size: 14px;
-            box-sizing: border-box;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 60px;
-        }
-
-        input:focus, textarea:focus {
-            outline: none;
-            border-color: #b38f00;
-        }
-
-        .btn {
-            border: none;
-            cursor: pointer;
-            padding: 10px 18px;
-            border-radius: 999px;
-            font-weight: 600;
-            font-size: 14px;
-            margin-top: 8px;
-        }
-
-        .btn-primary {
-            background: #b38f00;
-            color: #000;
-        }
-
-        .btn-primary:hover {
-            filter: brightness(1.08);
-        }
-
-        .btn-danger {
-            background: #b00020;
-            color: #fff;
-        }
-
-        .btn-secondary {
-            background: #222;
-            color: #f5f5f5;
-        }
-
-        .section {
-            margin-bottom: 24px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid #222;
-        }
-
-        .section:last-of-type {
-            border-bottom: none;
-        }
-
-        .section-title {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #f5f5f5;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        @media (max-width: 720px) {
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-        }
-
-        th, td {
-            border-bottom: 1px solid #222;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background: #111;
-            color: #f5f5f5;
-        }
-
-        tr:hover {
-            background: #151515;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .text-right {
-            text-align: right;
-        }
-
-        #login-section {
-            text-align: center;
-        }
-
-        #login-section input {
-            max-width: 300px;
-            margin: 0 auto;
-        }
-
-        .logo-mini {
-            display: block;
-            margin: 0 auto 10px;
-            height: 60px;
-            width: auto;
-        }
-
-        a.volver {
-            color: #b38f00;
-            font-size: 13px;
-            text-decoration: none;
-        }
-
-        a.volver:hover {
-            text-decoration: underline;
-        }
-
-        .nota {
-            font-size: 12px;
-            color: #c9c9c9;
-        }
-
-        input[type="file"] {
-            width: 100%;
-            color: #f5f5f5;
-            font-size: 13px;
-        }
-
-        input[type="file"]::file-selector-button {
-            border: none;
-            border-radius: 999px;
-            padding: 6px 12px;
-            margin-right: 10px;
-            background: #b38f00;
-            color: #000;
-            cursor: pointer;
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        input[type="file"]::file-selector-button:hover {
-            filter: brightness(1.08);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Panel de administración - Martínez Store</title>
+  <style>
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      padding: 40px;
+    }
+    .panel {
+      width: 100%;
+      max-width: 500px;
+      border: 1px solid gold;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    h2 {
+      color: gold;
+      text-align: center;
+    }
+    input, textarea, button {
+      width: 100%;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      background: gold;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="admin-wrapper">
-        <div class="admin-header">
-            <div>
-                <div class="admin-title">Panel de administración</div>
-                <div class="admin-subtitle">Martínez Store · Gestión de remeras</div>
-            </div>
-            <span class="badge">Solo administrador</span>
-        </div>
+  <div class="panel">
+    <h2>Panel de Administración</h2>
 
-        <p class="text-right" style="margin-top:-8px; margin-bottom:16px;">
-            <a href="index.html" class="volver">← Volver a la tienda</a>
-        </p>
+    <input type="text" id="nombre" placeholder="Nombre del producto">
+    <input type="number" id="precio" placeholder="Precio (Gs)">
+    <input type="text" id="talle" placeholder="Talle (P, M, G, GG)">
+    <textarea id="descripcion" placeholder="Descripción"></textarea>
 
-        <!-- LOGIN -->
-        <section id="login-section" class="section">
-            <img src="logo.png" alt="Martínez Store" class="logo-mini" />
-            <p style="margin-bottom: 12px;">Acceso solo para administrador.</p>
-            <form id="login-form">
-                <label for="password">Contraseña de administrador</label>
-                <input type="password" id="password" placeholder="Ingresa la contraseña" required />
-                <button type="submit" class="btn btn-primary">Entrar</button>
-            </form>
-            <p id="login-error" style="color:#ff6b6b; font-size: 13px; margin-top:8px; display:none;">
-                Contraseña incorrecta.
-            </p>
-        </section>
+    <input type="file" id="imagen" accept="image/*">
 
-        <!-- CONTENIDO ADMIN -->
-        <section id="admin-section" class="section" style="display:none;">
-            <h2 class="section-title">Nuevo producto / Editar producto</h2>
+    <button type="button" onclick="guardarProducto()">Guardar producto</button>
+  </div>
 
-            <p class="nota" style="margin-bottom:10px;">
-                ⚠ Los productos e imágenes se guardan solo en este dispositivo (localStorage).
-            </p>
+  <script>
+    async function subirImagenCloudinary(file) {
+      const url = "https://api.cloudinary.com/v1_1/dzdprg08i/image/upload";
 
-            <form id="product-form">
-                <input type="hidden" id="product-index" value="-1" />
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", "martinez_store");
 
-                <div class="grid-2">
-                    <div>
-                        <label for="nombre">Nombre del producto</label>
-                        <input type="text" id="nombre" required placeholder="Ej: Remera león dorado" />
-                    </div>
-                    <div>
-                        <label for="precio">Precio (Gs)</label>
-                        <input type="number" id="precio" required min="0" step="1000" placeholder="Ej: 85000" />
-                    </div>
-                </div>
+      const res = await fetch(url, {
+        method: "POST",
+        body: formData
+      });
 
-                <div class="grid-2" style="margin-top: 10px;">
-                    <div>
-                        <label for="categoria">Categoría</label>
-                        <input type="text" id="categoria" placeholder="Ej: Talle P, M, G, XL" />
-                    </div>
-                    <div>
-                        <label for="talles">Talles disponibles (separados por coma)</label>
-                        <input type="text" id="talles" placeholder="Ej: P,M,G,XL" />
-                    </div>
-                </div>
+      const data = await res.json();
+      return data.secure_url;
+    }
 
-                <div style="margin-top:10px;">
-                    <label for="imagenArchivo">Imagen del producto (desde tu galería)</label>
-                    <input type="file" id="imagenArchivo" accept="image/*" />
-                    <p class="nota">Si no eliges una imagen, se usará el logo por defecto.</p>
-                </div>
+    async function guardarProducto() {
+      const nombre = document.getElementById("nombre").value;
+      const precio = document.getElementById("precio").value;
+      const talle = document.getElementById("talle").value;
+      const descripcion = document.getElementById("descripcion").value;
+      const imagenInput = document.getElementById("imagen");
+      const file = imagenInput.files[0];
 
-                <div style="margin-top:10px;">
-                    <label for="descripcion">Descripción</label>
-                    <textarea id="descripcion" placeholder="Ej: Remera de algodón premium."></textarea>
-                </div>
+      if (!nombre || !precio || !talle) {
+        alert("Completá todos los campos");
+        return;
+      }
 
-                <button type="submit" class="btn btn-primary" id="btn-guardar">Guardar producto</button>
-                <button type="button" class="btn btn-secondary" id="btn-cancelar" style="display:none;">Cancelar edición</button>
-            </form>
-        </section>
+      let imageUrl = "";
+      if (file) {
+        imageUrl = await subirImagenCloudinary(file);
+      }
 
-        <section id="lista-section" class="section" style="display:none;">
-            <h2 class="section-title">Lista de productos</h2>
+      const producto = {
+        nombre,
+        precio,
+        talle,
+        descripcion,
+        imageUrl
+      };
 
-            <div id="sin-productos" class="text-center" style="padding:16px; font-size:14px; color:#c9c9c9;">
-                Todavía no cargaste ningún producto.
-            </div>
+      const productos = JSON.parse(localStorage.getItem("productos")) || [];
+      productos.push(producto);
+      localStorage.setItem("productos", JSON.stringify(productos));
 
-            <div id="tabla-contenedor" style="display:none; overflow-x:auto;">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Categoría</th>
-                            <th>Precio</th>
-                            <th>Talles</th>
-                            <th>Imagen</th>
-                            <th class="text-right">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="productos-tbody"></tbody>
-                </table>
-            </div>
-        </section>
-    </div>
+      alert("Producto guardado correctamente");
 
-    <script src="admin.js"></script>
+      document.getElementById("nombre").value = "";
+      document.getElementById("precio").value = "";
+      document.getElementById("talle").value = "";
+      document.getElementById("descripcion").value = "";
+      document.getElementById("imagen").value = "";
+    }
+  </script>
 </body>
 </html>
