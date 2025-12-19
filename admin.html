@@ -3,40 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin - Martinez Store</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 6px;
-      border: none;
-    }
-    button {
-      background: #25d366;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h2>Panel Admin - Cargar Remera</h2>
+<!-- LOGIN -->
+<div id="login">
+  <h2>Acceso Admin</h2>
+  <input id="user" placeholder="Usuario">
+  <input id="pass" type="password" placeholder="Contraseña">
+  <button onclick="login()">Ingresar</button>
+</div>
 
-  <form id="productForm">
-    <input type="text" id="nombre" placeholder="Nombre de la remera" required>
-    <input type="number" id="precio" placeholder="Precio" required>
-    <input type="text" id="imagen" placeholder="Link de imagen (Cloudinary)" required>
-    <button type="submit">Cargar Remera</button>
-  </form>
+<!-- PANEL -->
+<div id="panel" style="display:none">
+  <h2>Panel Admin</h2>
 
-  <script src="admin.js"></script>
+  <input id="nombre" placeholder="Nombre de la remera">
+  <input id="precio" placeholder="Precio en Gs">
+
+  <select id="talle">
+    <option>P</option>
+    <option>M</option>
+    <option>G</option>
+    <option>GG</option>
+  </select>
+
+  <input id="imagen" placeholder="Link imagen Cloudinary">
+
+  <button onclick="agregarProducto()">Agregar producto</button>
+
+  <h3>Productos cargados</h3>
+  <div id="lista"></div>
+
+  <button onclick="logout()">Cerrar sesión</button>
+</div>
+
+<script src="app.js"></script>
 </body>
 </html>
