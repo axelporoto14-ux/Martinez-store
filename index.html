@@ -3,76 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Martinez Store</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      margin: 0;
-      background: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
-
-    .logo {
-      margin-top: 40px;
-      width: 160px;
-    }
-
-    h1 {
-      color: gold;
-      margin: 20px 0 5px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 12px 20px;
-      background: #25d366;
-      color: #000;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .linea {
-      margin: 40px 0;
-      height: 2px;
-      background: gold;
-    }
-
-    #productos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .producto {
-      background: #111;
-      padding: 15px;
-      border-radius: 10px;
-    }
-
-    .producto img {
-      width: 100%;
-      border-radius: 8px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <img class="logo" src="https://res.cloudinary.com/dzqbrgo8i/image/upload/v1765750591/0ca065a0-0e7a-456e-9a4c-7db50dfe9d52_ouo7pd.jpg" alt="Martinez Store Logo">
+<h1>Martinez Store</h1>
+<p>Remeras disponibles</p>
 
-  <h1>Martinez Store</h1>
-  <p>Ropa para caballero · Estilo premium</p>
+<div id="catalogo"></div>
 
-  <a class="btn" href="https://wa.me/595982352177" target="_blank">Comprar por WhatsApp</a>
-
-  <div class="linea"></div>
-
-  <section id="productos"></section>
-
-  <script src="tienda.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
